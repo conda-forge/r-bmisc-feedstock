@@ -1,6 +1,5 @@
 {% set version = '1.4.6' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-bmisc
@@ -13,20 +12,18 @@ source:
   sha256: 304095a6b0e8e1b51dd411215d613915c5cee441aa131f666d3fb1078bea38c8
 
 build:
-  merge_build_host: True  # [win]
   missing_dso_whitelist:
     - '*/R.dll'            # [win]
     - '*/Rblas.dll'        # [win]
     - '*/Rlapack.dll'      # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
 
 requirements:
   build:
-    - {{ stdlib("c") }}        # [not win]
+    - {{ stdlib("c") }}
     - {{ stdlib("m2w64_c") }}  # [win]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
@@ -46,10 +43,8 @@ requirements:
     - r-dplyr
     - libblas         # [win]
     - liblapack       # [win]
-    - {{ native }}toolchain      # [win]
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcpp
     - r-rcpparmadillo
     - r-data.table
