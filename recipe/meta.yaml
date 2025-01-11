@@ -39,12 +39,16 @@ requirements:
     - r-rcpparmadillo              # [build_platform != target_platform]
     - r-data.table                 # [build_platform != target_platform]
     - r-dplyr                      # [build_platform != target_platform]
+    - r-caret                      # [build_platform != target_platform]
+    - r-tidyr                      # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp
     - r-rcpparmadillo
     - r-data.table
     - r-dplyr
+    - r-caret
+    - r-tidyr
     - libblas         # [win]
     - liblapack       # [win]
   run:
@@ -53,6 +57,8 @@ requirements:
     - r-rcpparmadillo
     - r-data.table
     - r-dplyr
+    - r-caret
+    - r-tidyr
 
 test:
   commands:
