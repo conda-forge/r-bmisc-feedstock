@@ -1,4 +1,4 @@
-{% set version = "1.4.8" %}
+{% set version = "1.4.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,14 +9,14 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/BMisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/BMisc/BMisc_{{ version }}.tar.gz
-  sha256: 0c1a2c068cd5a46d8769ae84108c0b14744d6e45475b2328f0d1f4dfb61885d2
+  sha256: 7b327d6ec3847324ef16d93d5e911928b8d885d17ab61d907e506e965ff411ef
 
 build:
   missing_dso_whitelist:
     - '*/R.dll'            # [win]
     - '*/Rblas.dll'        # [win]
     - '*/Rlapack.dll'      # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -70,9 +70,9 @@ about:
   home: https://bcallaway11.github.io/BMisc/
   dev_url: https://github.com/bcallaway11/BMisc
   license: GPL-2.0-only
-  summary: These are miscellaneous functions for working with panel data, quantiles, and printing results.  For panel data, the package includes functions for making a panel data balanced (that is, dropping missing individuals that have missing observations in any time period), converting id numbers to row numbers, and to
-    treat repeated cross sections as panel data under the assumption of rank invariance.  For quantiles, there are functions to make distribution functions from a set of data points (this is particularly useful when a distribution function is created in several steps), to combine distribution functions based on some external
-    weights, and to invert distribution functions.  Finally, there are several other miscellaneous functions for obtaining weighted means, weighted distribution functions, and weighted quantiles; to generate summary statistics and their differences for two groups; and to add or drop covariates from formulas.
+  summary: These are miscellaneous functions for working with panel data, quantiles, and printing results.  For panel data, the package includes functions for making a panel data balanced (that is, dropping missing individuals that have missing observations in any time period), converting id numbers to row numbers, and
+    to treat repeated cross sections as panel data under the assumption of rank invariance.  For quantiles, there are functions to make distribution functions from a set of data points (this is particularly useful when a distribution function is created in several steps), to combine distribution functions based on some
+    external weights, and to invert distribution functions.  Finally, there are several other miscellaneous functions for obtaining weighted means, weighted distribution functions, and weighted quantiles; to generate summary statistics and their differences for two groups; and to add or drop covariates from formulas.
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
