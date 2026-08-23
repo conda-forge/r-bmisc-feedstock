@@ -1,4 +1,4 @@
-{% set version = "1.4.9" %}
+{% set version = "1.4.10" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/BMisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/BMisc/BMisc_{{ version }}.tar.gz
-  sha256: 7b327d6ec3847324ef16d93d5e911928b8d885d17ab61d907e506e965ff411ef
+  sha256: 80ed1ac6dc0dbb310ce566b090935fd0215e8dc5bf7928e9d933ec0fd9c79a83
 
 build:
   missing_dso_whitelist:
